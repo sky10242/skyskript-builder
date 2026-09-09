@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+
+  font-family:
+    "Segoe UI",
+    "Yu Gothic",
+    Meiryo,
+    system-ui,
+    sans-serif;
+
+  background: #101218;
+  color: #ffffff;
+}
+
+/* ============================================================
+   App
+   ============================================================ */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #101218;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.header {
+  height: 62px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #181b22;
+
+  border-bottom: 1px solid #2d323c;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.version {
+  padding: 3px 7px;
+
+  border-radius: 5px;
+
+  background: #272c35;
+
+  color: #929aa9;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+button,
+.button {
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 12px;
+
+  border: 1px solid #3a404b;
+
+  border-radius: 7px;
+
+  background: #252a33;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+button:hover,
+.button:hover {
+  background: #303640;
+  border-color: #4a5260;
+}
+
+button:active,
+.button:active {
+  transform: translateY(1px);
+}
+
+.button {
+  user-select: none;
+}
+
+button.export {
+  background: #5865f2;
+
+  border-color: #5865f2;
+
+  font-weight: 600;
+}
+
+button.export:hover {
+  background: #4752c4;
+
+  border-color: #4752c4;
+}
+
+/* ============================================================
+   Notification
+   ============================================================ */
+
+.notification {
+  position: fixed;
+
+  top: 75px;
+  right: 18px;
+
+  z-index: 1000;
+
+  padding: 10px 15px;
+
+  border: 1px solid #3c4655;
+
+  border-radius: 7px;
+
+  background: #20252e;
+
+  color: #e8ecf2;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.35);
+
+  font-size: 12px;
+}
+
+/* ============================================================
+   Main
+   ============================================================ */
+
+.main {
+  flex: 1;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns: 60% 40%;
+}
+
+/* ============================================================
+   Panels
+   ============================================================ */
+
+.editor-panel,
+.code-panel {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-panel {
+  border-right: 1px solid #2d323c;
+}
+
+.code-panel {
+  background: #0d0f13;
+}
+
+/* ============================================================
+   Panel header
+   ============================================================ */
+
+.panel-header {
+  height: 46px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  background: #181b22;
+
+  border-bottom: 1px solid #2d323c;
+
+  font-size: 13px;
+}
+
+.panel-description {
+  margin-left: 10px;
+
+  color: #747d8d;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+.live {
+  color: #55d187;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+/* ============================================================
+   Blockly
+   ============================================================ */
+
+.blockly-container {
+  flex: 1;
+
+  min-height: 0;
+
+  position: relative;
+}
+
+/*
+ * Blockly category panel
+ */
+
+.blocklyToolboxDiv {
+  background: #181b22 !important;
+
+  border-right: 1px solid #2d323c;
+}
+
+/*
+ * Blockly flyout
+ */
+
+.blocklyFlyoutBackground {
+  fill: #20242c !important;
+}
+
+/*
+ * Blockly scrollbar
+ */
+
+.blocklyScrollbarHandle {
+  fill: #555d6c !important;
+}
+
+.blocklyScrollbarBackground {
+  fill: #171a20 !important;
+}
+
+/* ============================================================
+   Code header
+   ============================================================ */
+
+.code-header {
+  height: 34px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  background: #101218;
+
+  border-bottom: 1px solid #252a32;
+
+  color: #858d9b;
+
+  font-family:
+    "Cascadia Code",
+    Consolas,
+    monospace;
+
+  font-size: 11px;
+}
+
+/* ============================================================
+   Code
+   ============================================================ */
+
+.code {
+  flex: 1;
+
+  min-height: 0;
+
+  margin: 0;
+
+  padding: 18px;
+
+  overflow: auto;
+
+  background: #0d0f13;
+
+  color: #e4e8ee;
+
+  font-family:
+    "Cascadia Code",
+    "JetBrains Mono",
+    Consolas,
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  tab-size: 4;
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+}
+
+.code::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.code::-webkit-scrollbar-track {
+  background: #101218;
+}
+
+.code::-webkit-scrollbar-thumb {
+  background: #343a45;
+
+  border-radius: 5px;
+}
+
+.code::-webkit-scrollbar-thumb:hover {
+  background: #444b58;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer {
+  height: 29px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  background: #181b22;
+
+  border-top: 1px solid #2d323c;
+
+  color: #697282;
+
+  font-size: 10px;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 55% 45%;
+  }
+
+  .panel-description {
+    display: none;
+  }
+
+  .toolbar button,
+  .toolbar .button {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .version {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55% 45%;
+  }
+
+  .editor-panel {
+    border-right: none;
+    border-bottom: 1px solid #2d323c;
+  }
+
+  .toolbar button:nth-child(1),
+  .toolbar button:nth-child(2) {
+    display: none;
+  }
+}
